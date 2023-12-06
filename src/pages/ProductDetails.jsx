@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import {CartContext} from '../context/CartContext'
 import { ColorRing } from 'react-loader-spinner';
+import {Link} from "react-router-dom"
 
 const ProductDetails = () => {
 
@@ -59,6 +60,18 @@ console.log('ID from useParams:', id);
   return (
     <section className='pt-48 lg:pt-52 pb-12 lg:py-32 h-screen flex items-center'>
         <div className="container mx-auto">
+            <div className="flex mb-5">
+                    <Link to="/">
+                        <p className="text-red-500">
+                        Home
+                        </p>
+                    </Link>{">"}
+                    <Link to="/cart">
+                        <p className="text-red-500">
+                        Cart
+                        </p>
+                    </Link>
+            </div>
             <div className='flex flex-col lg:flex-row items-center'>
                 {/* image */}
                 <div className='flex flex-1 justify-center items-center 
