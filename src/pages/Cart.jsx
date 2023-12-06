@@ -16,6 +16,7 @@ import {Link, useNavigate} from "react-router-dom"
 import { CartContext } from '../context/CartContext';
 import { toast } from "react-toastify";
 import { Modal } from "../Components/Modal";
+import Footer from "../Components/footer/Footer";
 //for form validation
 // import { useForm } from 'react-hook-form';
 // import { yupResolver } from '@hookform/resolvers/yup';
@@ -113,6 +114,7 @@ const Cart = () => {
         </div>
       
       </div>
+      <Footer/>
   </div>
   );
 };

@@ -10,6 +10,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Config/firebase";
 
 import {toast} from "react-toastify"
+import BestSellers from '../Components/Products/BestSellers';
+import Footer from '../Components/footer/Footer';
 
 
 const Home = ({product}) => {
@@ -71,12 +73,20 @@ const Home = ({product}) => {
       ) : (
         <> 
           <div className='text-center pt-[100px] pb-[20px]'>
-            <h2 className='text-2xl md:text-4xl font-bold text-red-400'>Products</h2>
+            <h2 className='text-2xl md:text-4xl font-bold text-red-400'>New Arrivals</h2>
           </div>
           
             <Products products={products}/>
         </>
       )}
+
+      <div>
+        <div className='text-center pt-[100px] pb-[20px]'>
+          <h2 className='text-2xl md:text-4xl font-bold text-red-400'>All Products</h2>
+        </div>
+        <BestSellers/>
+      </div>
+      <Footer/>
     </section>
   )
 }

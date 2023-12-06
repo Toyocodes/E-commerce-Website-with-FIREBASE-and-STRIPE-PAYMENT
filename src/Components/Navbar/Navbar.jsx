@@ -10,6 +10,10 @@ import { signOut } from "firebase/auth";
 import {CartContext} from '../../context/CartContext'
 import { toast } from 'react-toastify';
 
+// harmburger menu
+import { navigation } from "../../assets/data/menu";
+import NavMobile from "./NavMobile";
+
 
 const Navbar = () => {
   
@@ -51,17 +55,16 @@ const Navbar = () => {
 }) 
 
 
-
-
   return (
     <section>
       <header 
         className={`${
-        isActive ? 'bg-white py-3 shadow-md' : 'bg-red py-3'} 
+        isActive ? 'bg-white py-6 shadow-md' : 'bg-red py-6'} 
         fixed w-full z-10 transition-all`}>
 
         <div className='px-[10%] sm:px-[6%] flex items-center 
         justify-between h-full'>
+  
           {/* logo */}
           <Link to={'/'}>
               <div className='text-pink-500 font-bold'>
@@ -70,7 +73,15 @@ const Navbar = () => {
               </div>
           </Link>   
 
-          <div className='flex gap-x-6 items-center text-primary-color font-semibold'>
+          <ul className='hidden lg:flex lg:items-center gap-x-6 items-center text-primary-color font-semibold'>
+            {navigation.map((item, index) => (
+              <li key={index}>
+                <Link to={item.path}>{item.title}</Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* <div className='flex gap-x-6 items-center text-primary-color font-semibold'>
             <Link to="/">
               <p
                 className={`${activeTab === "Home" ? "text-red-500": ""}`}
@@ -101,11 +112,11 @@ const Navbar = () => {
               )
             }
             
-          </div>
+          </div> */}
 
-          {/* cart */}
-          <div className='flex justify-between items-center gap-x-6'>
-            
+          
+          <div className='hidden lg:flex justify-between items-center gap-x-6'>
+            {/* login */}
             {!user && (
                 <>
                   <Link to="/login">
@@ -134,7 +145,7 @@ const Navbar = () => {
             </div>
 
                 {/* for log out to display when user has login*/}
-            <div className='flex justify-center items-center gap-x-6'>
+            <div className='hidden lg:flex justify-center items-center gap-x-6'>
               { user && (
                 <>
                   <p className='text-[16px]'> {user?.displayName} </p>
@@ -148,6 +159,7 @@ const Navbar = () => {
             </div>
 
           </div>
+          <NavMobile />
       </div>
       
   </header>

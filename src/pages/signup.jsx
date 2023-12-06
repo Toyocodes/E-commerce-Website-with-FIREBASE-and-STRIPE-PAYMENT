@@ -53,7 +53,7 @@ const signup = () => {
     }
 
     const [data, setData] = useState({
-      name: '',
+      fullname: '',
       email: '',
       password: '',
     });
@@ -74,7 +74,7 @@ const signup = () => {
           // Add user data to Firestore
           const userRef = collection(db, "users"); // Assuming "users" is the name of your Firestore collection
           await addDoc(userRef, {
-            name: data.name,
+            name: data.fullname,
             email: data.email,
             timestamp: serverTimestamp(),
           });
@@ -112,10 +112,10 @@ const signup = () => {
                 <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" 
                 type="text" 
                 id="name"
-                name="name"
+                name="fullname"
                 placeholder="Jane Doe"
-                {...register("name")}
-                value={data.name}
+                {...register("fullname")}
+                value={data.fullname}
                 onChange={handleChange}
                 />
                 <div>

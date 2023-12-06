@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { BsPlus } from 'react-icons/bs';
 import { GiShoppingCart } from "react-icons/gi";
-
+import {products} from "../../assets/data/products"
 import { CartContext } from '../../context/CartContext';
 
-const Products = ({ products }) => {
-  const { addToCart } = useContext(CartContext);
-
+const BestSellers = () => {
+    const { addToCart } = useContext(CartContext);
   return (
     <div>
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 
           lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-x-20 px-[6%] md:px-[8%]'>
-             {products.map(({ id, img, title, description, price }) => (
+             {products.map(({ id, img, title, category, price }) => (
               <div key={id}>
                 <div className='h-[300px] mb-[-4rem] relative overflow-hidden group transition'>
                   <div className='w-full h-full flex justify-center items-center'>
@@ -33,12 +32,12 @@ const Products = ({ products }) => {
                       </h2>
                     </Link>
                     <div className='text-sm capitalize text-gray-500 mb-1'>
-                      {description}
+                      {category}
                     </div>
                   </div>
                   <div className='flex justify-between items-center'>
                     <div className='font-semibold'>${price}</div>
-                    <button onClick={() => addToCart({ id, img, title, description, price })}>
+                    <button onClick={() => addToCart({ id, img, title, category, price })}>
                       <div className='flex justify-center items-center text-white w-[30px] h-[30px] bg-black rounded-full hover:h-[32px] hover:w-[32px] transition-all duration-300'>
                         <BsPlus className='text-3xl' />
                       </div>
@@ -49,7 +48,7 @@ const Products = ({ products }) => {
             ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Products;
+export default BestSellers

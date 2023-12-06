@@ -26,7 +26,7 @@ const CartItems = ({item}) => {
           {/* title and desc */}
           <div className=" mb-2">
             <Link to={`/product/${id}`}>
-              <h2 className="font-semibold mb-1 text-primary-color text-xl hover:underline">
+              <h2 className="font-semibold mb-1 text-primary-color text-[14px] sm:text-[15px] lg:text-[16px] mr-10 hover:underline">
                 {title}
               </h2>
             </Link>
