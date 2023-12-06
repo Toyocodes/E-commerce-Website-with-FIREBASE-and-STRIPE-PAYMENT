@@ -46,8 +46,19 @@ const Cart = () => {
       <div className="flex flex-col justify-center items-center gap-10 px-[6%]">
         
           <div className="md:flex-auto mt-[120px]">
-          
-            <div>
+              <div className="flex mb-5">
+                  <Link to="/">
+                    <p className="text-red-500">
+                      Home
+                    </p>
+                  </Link>{">"}
+                  <Link to="/cart">
+                    <p className="text-red-500">
+                      Cart
+                    </p>
+                  </Link>
+              </div>
+              <div>
                 <div
                     className="flex justify-between py-2 border-b 
                     border-gray-200 font-light text-gray-500 gap-x-10 md:gap-x-20"
@@ -63,20 +74,20 @@ const Cart = () => {
                       <p></p>
                     </div>
                 </div>
-                {cartProducts.length > 0 ? (
-                  cartProducts.map((item) => (
-                    <CartItems
-                      key={item.id}
-                      item={item} // Assuming each item has a unique ID
-                    />
-                  ))
-                ) : (
-                  <div className="flex justify-center items-center h-[100vh]">
-                      <p>Your cart is empty</p>
-                  </div>
-                )}
+                    {cartProducts.length > 0 ? (
+                      cartProducts.map((item) => (
+                        <CartItems
+                          key={item.id}
+                          item={item} // Assuming each item has a unique ID
+                        />
+                      ))
+                    ) : (
+                      <div className="flex justify-center items-center h-[100vh]">
+                          <p>Your cart is empty</p>
+                      </div>
+                    )}
 
-            </div>
+              </div>
          </div>
         
         <div className="md:flex-auto border-2 border-gray-300 p-1 justify-center items-center rounded px-8 py-4"> 

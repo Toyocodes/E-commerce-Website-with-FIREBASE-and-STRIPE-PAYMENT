@@ -26,7 +26,7 @@ const Navbar = () => {
     await signOut(auth)
     prompt: 'select_account' //so that u can select other google accounts
     toast.success("Logout Successful");
-    navigate("/login")
+    navigate("/")
  } 
 
 

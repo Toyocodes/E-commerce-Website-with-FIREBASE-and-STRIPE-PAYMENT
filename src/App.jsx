@@ -31,7 +31,7 @@ function App() {
     <div className='overflow-hidden'>
       <Router>
         <Navbar/>
-        <ToastContainer position="top-right" className="mt-16 w-[230px] text-[13px]" toastStyle={customToastStyle}/>
+        <ToastContainer position="top-right" className="mt-20 w-[230px] text-[13px]" toastStyle={customToastStyle}/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/shop' element={<Shop/>}/>
