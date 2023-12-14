@@ -51,7 +51,7 @@ export const products = [
     id: "20",
     title: "Beat Studio Wireless",
     img: productImg23,
-    category: "wireless",
+    category: "headset",
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -74,7 +74,7 @@ export const products = [
     id: "22",
     title: "JBL Headphones",
     img: productImg25,
-    category: "wireless",
+    category: "headset",
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -96,7 +96,7 @@ export const products = [
     id: "10",
     title: "iPhone 12 Pro 256GB",
     img: productImg13,
-    category: "mobile",
+    category: "mobile phones",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -164,7 +164,7 @@ export const products = [
     id: "17",
     title: "Timex Reader Watch",
     img: productImg20,
-    category: "watch",
+    category: "wristwatch",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -187,7 +187,7 @@ export const products = [
     id: "18",
     title: "Rolex Watch",
     img: productImg21,
-    category: "watch",
+    category: "wristwatch",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -231,7 +231,7 @@ export const products = [
     id: "13",
     title: "One Plus Nord",
     img: productImg16,
-    category: "mobile",
+    category: "mobile phones",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -299,7 +299,7 @@ export const products = [
     id: "12",
     title: "Realme 8",
     img: productImg15,
-    category: "mobile",
+    category: "mobile phones",
     price: 599,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -390,7 +390,7 @@ export const products = [
     id: "11",
     title: "Apple iPhone 12 Max",
     img: productImg14,
-    category: "mobile",
+    category: "mobile phones",
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -413,7 +413,7 @@ export const products = [
     id: "14",
     title: "iPhone 13 Pro",
     img: productImg17,
-    category: "mobile",
+    category: "mobile phones",
     price: 899,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -436,7 +436,7 @@ export const products = [
     id: "15",
     title: "Samsung Galaxy S22",
     img: productImg18,
-    category: "mobile",
+    category: "mobile phones",
     price: 699,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -459,7 +459,7 @@ export const products = [
     id: "16",
     title: "Rolex Watch",
     img: productImg19,
-    category: "watch",
+    category: "wristwatch",
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -481,7 +481,7 @@ export const products = [
     id: "19",
     title: "Apple Watch",
     img: productImg22,
-    category: "watch",
+    category: "wristwatch",
     price: 399,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",

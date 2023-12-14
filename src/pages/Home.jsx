@@ -11,7 +11,9 @@ import { auth } from "../Config/firebase";
 
 import {toast} from "react-toastify"
 import BestSellers from '../Components/Products/BestSellers';
+import Announcement from '../Components/announcement/Announcement';
 import Footer from '../Components/footer/Footer';
+import Sales from '../Components/Sales/Sales';
 
 
 const Home = ({product}) => {
@@ -81,11 +83,24 @@ const Home = ({product}) => {
       )}
 
       <div>
+        <div className='text-center pt-[120px] pb-[10px]'>
+          <h2 className='text-2xl md:text-4xl font-bold text-red-400'>Flash Sales</h2>
+        </div>
+        <Sales/>
+      </div>
+
+      <div>
         <div className='text-center pt-[100px] pb-[20px]'>
           <h2 className='text-2xl md:text-4xl font-bold text-red-400'>All Products</h2>
         </div>
         <BestSellers/>
       </div>
+
+
+      <div className='hidden sm:block pt-[6%]'>
+        <Announcement/>
+      </div>
+      
       <Footer/>
     </section>
   )

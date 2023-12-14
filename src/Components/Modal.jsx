@@ -15,6 +15,7 @@ export const Modal = () => {
   const handleToken =(token)=>{
     console.log(token)
     toast.success("Order has been placed successfully")
+    clearCart();
   }
  
     
