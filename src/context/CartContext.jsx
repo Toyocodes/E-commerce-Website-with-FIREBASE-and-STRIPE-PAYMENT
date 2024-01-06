@@ -1,4 +1,5 @@
-import React, { useState, createContext, useEffect } from 'react';
+
+import { useState, createContext, useEffect } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Config/firebase";
 import {useNavigate} from "react-router-dom"
@@ -22,6 +23,7 @@ const CartProvider = ({ children }) => {
   const [user] = useAuthState(auth)
   //   const uid = user ? user.uid : null
   
+  // const navigate = useNavigate();
   //add product to cart
   
   const addToCart = (product) => {

@@ -1,20 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import { auth, db } from "../Config/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import {
-  collection,
-  addDoc,
-  getDocs,
-  deleteDoc,
-  doc,
-  onSnapshot,
-  serverTimestamp,
-} from "firebase/firestore";
+import { useState, useContext } from "react";
 import CartItems from "../Components/CartItems";
-import {Link, useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 import { CartContext } from '../context/CartContext';
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { Modal } from "../Components/Modal";
 import Footer from "../Components/footer/Footer";
 //for form validation
@@ -25,7 +13,7 @@ import Footer from "../Components/footer/Footer";
 
 const Cart = () => {
   
-  const { cartProducts, total, itemAmount } = useContext(CartContext);
+  const { cartProducts, total, itemAmount, clearCart } = useContext(CartContext);
   
 
   const [showStripeCheckout, setShowStripeCheckout] = useState(false);
@@ -34,6 +22,12 @@ const Cart = () => {
   const handleCheckout = () => {
     setShowStripeCheckout(true);
     setShowProceedButton(false);
+  };
+
+  const handlePaymentSuccess = () => {
+    // setShowStripeCheckout(false);
+    // setShowProceedButton(true);
+    clearCart(); // Clear the cart after successful payment
   };
 
   // const closeCheckoutModal = () => {
@@ -90,40 +84,41 @@ const Cart = () => {
               </div>
          </div>
         
-        <div className="md:flex-auto border-2 border-gray-300 p-1 justify-center items-center rounded px-8 py-4"> 
-          <div className="flex flex-col items-center mt-3 ">
+        {cartProducts.length > 0 &&(
+          <div className="md:flex-auto border-2 border-gray-300 p-1 justify-center items-center rounded px-8 py-4"> 
+            <div className="flex flex-col items-center mt-3 ">
 
-            <h2 className="text-xl font-bold border-b-2 border-red-600">Cart Summary</h2>
-              <div className="mt-5 mb-8">
-                  <div className="flex justify-between items-center gap-x-6">
-                    <h2 className='text-[17px]'>Total No of items: </h2>
-                    <p>{itemAmount}</p>
-                  </div>
-                  <div className="flex justify-between items-center gap-x-12">
-                    <h2 className='text-[17px]'>Total Price: </h2>
-                    <p>${total}</p>
-                  </div>
-              </div>
-              <div className="flex flex-col justify-center items-center gap-y-8 mb-4">
-              <div className=""><Link to="/" className="bg-blue-500 text-white px-2 py-3 rounded">Continue Shopping</Link></div>
-              {showProceedButton && ( // Render Proceed To Checkout button if showProceedButton is true
-                <div className="" onClick={() => handleCheckout()}>
-                  <p className="bg-red-600 text-white px-2 py-3 rounded cursor-pointer">
-                    Proceed To Check Out
-                  </p>
+              <h2 className="text-xl font-bold border-b-2 border-red-600">Cart Summary</h2>
+                <div className="mt-5 mb-8">
+                    <div className="flex justify-between items-center gap-x-6">
+                      <h2 className='text-[17px]'>Total No of items: </h2>
+                      <p>{itemAmount}</p>
+                    </div>
+                    <div className="flex justify-between items-center gap-x-12">
+                      <h2 className='text-[17px]'>Total Price: </h2>
+                      <p>${total}</p>
+                    </div>
                 </div>
-                )}
-              </div>
+                <div className="flex flex-col justify-center items-center gap-y-8 mb-4">
+                <div className=""><Link to="/" className="bg-blue-500 text-white px-2 py-3 rounded">Continue Shopping</Link></div>
+                {showProceedButton && ( 
+                  <div className="" onClick={() => handleCheckout()}>
+                    <p className="bg-red-600 text-white px-2 py-3 rounded cursor-pointer">
+                      Proceed To Check Out
+                    </p>
+                  </div>
+                  )}
+                </div>
 
-              {/* Modal component */}
-              {showStripeCheckout && ( // Render StripeCheckout if showStripeCheckout is true
-                <Modal />
-              )}
+                {/* Modal component */}
+                {showStripeCheckout && (
+                  <Modal handlePaymentSuccess={handlePaymentSuccess}/>
+                )}
+                      
                     
-                  
+            </div>
           </div>
-        </div>
-      
+        )}
       </div>
       <Footer/>
   </div>

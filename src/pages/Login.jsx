@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {FcGoogle} from "react-icons/fc"
-import {auth, db, provider} from "../Config/firebase"
+import {auth, provider} from "../Config/firebase"
 import {
   signInWithPopup, 
   signInWithEmailAndPassword, 

@@ -76,7 +76,7 @@ const Navbar = () => {
           <ul className='hidden lg:flex lg:items-center gap-x-6 items-center text-primary-color font-semibold'>
             {navigation.map((item, index) => (
               <li key={index}>
-                <Link to={item.path}>{item.title}</Link>
+                <Link to={item.path} className='hover:text-red-500'>{item.title}</Link>
               </li>
             ))}
           </ul>
